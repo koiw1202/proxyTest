@@ -27,7 +27,9 @@ public class DecoratorPatternTest {
         Component realComponent = new RealComponent();
         Component messageDecorator = new MessageDecorator(realComponent);
         Component timeDecorator = new TimeDecorator(messageDecorator);
-        DecoratorPatternClient client = new DecoratorPatternClient(timeDecorator);
+        TestDecorator testDecorator = new TestDecorator(timeDecorator);
+        DecoratorPatternClient client = new DecoratorPatternClient(testDecorator);
+
         client.execute();
     }
 }
